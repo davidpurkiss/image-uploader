@@ -7,7 +7,7 @@ export class App {
 
   configureRouter(config, router) {
     this.router = router;
-    config.title = 'HaglTrade';
+    config.title = 'Image Uploader';
     config.map([
       { route: ['', 'upload'], name: 'upload', moduleId: 'upload' },
       { route: 'admin/image-upload-configs', name: 'image-upload-configs', moduleId: 'admin/image-upload-configs' },
