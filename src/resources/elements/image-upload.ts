@@ -15,7 +15,7 @@ export class ImageUploadComponent {
 
     dialog: DialogService;
 
-    noSrc: string = "/content/images/image-place-holder.png";
+    noSrc: string = "content/images/image-place-holder.png";
 
     constructor(dialog: DialogService) {
         this.dialog = dialog;
