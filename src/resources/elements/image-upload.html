@@ -1,0 +1,6 @@
+<template>
+    <a href="#" class="ui ${size} bordered image" click.delegate="uploadImage()">
+        <img src.bind="src" >
+        <div if.bind="src == noSrc" style="position: absolute; top:75%;margin-left:20%;margin-right:20%"><h4 class="ui center aligned header">Tap or Click here to add an image</h4></div>
+    </a>
+</template>
