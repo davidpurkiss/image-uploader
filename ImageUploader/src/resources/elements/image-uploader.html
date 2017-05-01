@@ -1,0 +1,30 @@
+<template>
+    <require from="./image-uploader.css"></require>
+    <require from="cropperjs/cropper.min.css"></require>
+    <div show.bind="!hasImage" class="ui ${isLoading ? 'loading' : ''} segment" ref="dropZone">
+        <div class="drop-zone-border ${isDragOver ? 'over' : (isUnsupported ? 'unsupported' : 'default') }" style.bind="style">
+            <div>
+                <h2 class="ui ${isDragOver ? 'blue' : (isUnsupported ? 'red' : 'grey')} center aligned icon header">
+                    <i class="image icon"></i>
+                    <div class="content">
+                        ${isDragOver ? 'Let it go! Let it Go!' : (isUnsupported ? 'Images only please.' : 'Drag &amp; Drop')}
+                    </div>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div show.bind="hasImage" class="ui ${isLoading ? 'loading' : ''} segment">
+        <div class="ui image">
+            <img ref="image" />
+        </div>
+    </div>
+    <button class="ui right labeled icon primary button" click.delegate="browse()">Browse<i class="upload icon"></i></button>
+    <input type="file" name="fileInput" accept="image/*" capture="true" style="display: none;" ref="fileInput" />
+    <div class="ui center aligned buttons">
+        <button class="ui icon button" data-tooltip="Rotate Counter Clockwise" click.delegate="rotateCounterClockwise()"><i class="undo icon"></i></button>
+        <button class="ui icon button" data-tooltip="Rotate Clockwise" click.delegate="rotateClockwise()"><i class="repeat icon"></i></button>
+        <button class="ui icon button" data-tooltip="Flip Horizontal" click.delegate="flipHorizontal()"><i class="resize vertical icon"></i></button>
+        <button class="ui icon button" data-tooltip="Flip Vertical" click.delegate="flipVertical()"><i class="resize horizontal icon"></i></button>
+        <button class="ui icon button" data-tooltip="Toggle Move on Drag" click.delegate="toggleDragMode()"><i class="move icon"></i></button>
+    </div>
+</template>

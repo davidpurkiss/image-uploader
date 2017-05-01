@@ -1,0 +1,18 @@
+<template>
+    <div class="ui modal">
+        <!--<i class="close icon"></i>-->
+        <div class="content">
+            <image-uploader cropper-created.call="cropperCreated(cropper)" config.bind="config"></image-uploader>
+        </div>
+        <div class="actions">
+            <button class="ui secondary right labeled icon button" click.delegate="cancel()">
+                Cancel
+                <i class="cancel icon"></i>
+            </button>
+            <button class="ui primary right labeled icon button" click.delegate="ok()">
+                Done
+                <i class="checkmark icon"></i>
+            </button>
+        </div>
+    </div>
+</template>
